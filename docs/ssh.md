@@ -2,6 +2,47 @@
 
 Various tricks with SSH
 
+## SSH Config
+
+Typically lives in ~/.ssh/config.
+
+### Base Config
+
+Some of the options listed below are for macOS only.
+
+```text
+Host *
+  User dronenb
+  UseKeychain yes # I think for macOS only
+  AddKeysToAgent yes
+  ServerAliveInterval 30
+  LogLevel ERROR
+```
+
+### Conditional Host
+
+Sometimes it may be useful to have a `ProxyCommand` or `ProxyJump` directive if you meet a certain condition (IE, on or off a particular network). For example, the following could be used to access github.com through an internet proxy:
+
+```text
+Match Originalhost github.com Exec "condition"
+  ProxyCommand nc -X connect -x <proxyhost>:<proxyport> %h %p
+```
+
+`condition` can be a `bash` pipeline.
+
+### SSH Agent + Environment Variable forwarding
+
+Probably not a good idea to enable for all hosts, but can be useful, particularly for bastion hosts.
+
+```text
+Host myhost
+  ForwardAgent yes
+  SendEnv GH_TOKEN
+  SendEnv GH_HOST
+```
+
+For environment variables, the server must have the appropriate `AcceptEnv GH_TOKEN`, etc. on the other end in the `/etc/ssh/sshd_config` file.
+
 ## FIDO2 support for macOS
 
 ```bash
