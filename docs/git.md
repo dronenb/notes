@@ -1,6 +1,8 @@
 # Git
 
-If there are upstream commits and you are ahead:
+Tips and tricks for working with `git`.
+
+## Rebase when there are upstream changes
 
 ```bash
 git remote add upstream <upstream-repository-URL>
@@ -16,7 +18,7 @@ git rebase --continue
 git push -f
 ```
 
-Enable rebasing by default:
+## Enable rebasing by default:
 
 ```
 git config --global pull.rebase true
