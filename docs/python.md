@@ -1,5 +1,7 @@
 # Python
 
+Tips and tricks when working with Python that I'm inclined to forget.
+
 ## pyenv
 
 Using `pyenv` on Mac:
@@ -18,7 +20,7 @@ brew install python-tk@3.12
 python global 3.12.1
 ```
 
-## Certificates Issue
+## macOS Cert Issue
 
 On macOS, might be necessary to run [this script](https://github.com/python/cpython/blob/main/Mac/BuildScript/resources/install_certificates.command). Have run into issues with OpenSSL and `brew` before, if so just run:
 
@@ -31,7 +33,5 @@ Some answers also suggest installing or upgrading `certifi`
 ```bash
 pip3 install --upgrade certifi
 ```
-
-## Links
 
 - <https://github.com/python/cpython/blob/main/Mac/BuildScript/resources/install_certificates.command>
