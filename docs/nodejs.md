@@ -1,6 +1,6 @@
 # Node.js
 
-View tarball of `npm` package (example with `playwright-core`)
+## View tarball of `npm` package (example with `playwright-core`)
 
 ```bash
 npm view playwright-core
