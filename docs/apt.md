@@ -1,4 +1,6 @@
-# Apt
+# `apt` + `apt-get`
+
+For use in Debian + Ubuntu based OS's.
 
 ## Apt with Proxy
 
