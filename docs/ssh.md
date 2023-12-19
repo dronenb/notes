@@ -64,3 +64,11 @@ brew install michaelroosz/ssh/libsk-libfido2-install
 
 - <https://github.com/MichaelRoosz/homebrew-ssh/blob/main/Casks/libsk-libfido2-install.rb>
 - <https://github.com/Yubico/libfido2/issues/464#issuecomment-1781855050>
+
+## Hushlogin
+
+Disable useless output when logging in via SSH:
+
+```bash
+touch $HOME/.hughlogin
+```
