@@ -1,6 +1,6 @@
-# Shell Scripting
+# Shell Scripting + `bash` + `zsh` Tricks
 
-Useful one liners that I always end up Googling or obscure things that took me awhile to come up with.
+Useful one liners that I always end up Googling or obscure things that took me awhile to find or come up with.
 
 ## Disable Bash deprecation warning in macOS
 
