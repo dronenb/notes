@@ -26,6 +26,6 @@ kubectl run -it toolbox --image <image> --overrides='{ "spec": { "serviceAccount
 Get shell into pod
 
 ```bash
-oc exec -it pods/<pod_name> -- /bin/bash
+kubectl exec -it pods/<pod_name> -- /bin/bash
 ```
 
