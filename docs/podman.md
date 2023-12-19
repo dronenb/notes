@@ -74,6 +74,4 @@ podman machine start
 
 On macOS, config is stored in `~/.config/containers/containers.conf` in TOML format. Example:
 
-### Links
-
 - <https://github.com/containers/common/blob/main/docs/containers.conf.5.md>
