@@ -1,6 +1,14 @@
-# Tricks for kubectl
+# `kubectl`
 
-Create an ad-hoc pod using a push/pull secret:
+Tips and tricks for `kubectl` and other utils so I don't have to remember everything all the time.
+
+## Get shell into pod
+
+```bash
+kubectl exec -it pods/<pod_name> -- /bin/bash
+```
+
+## Create an ad-hoc pod using a push/pull secret:
 
 ```bash
 kubectl run \
@@ -17,15 +25,8 @@ kubectl run \
     -- /bin/bash
 ```
 
-Create ad-hoc container image using a service account:
+## Create ad-hoc container image using a service account:
 
 ```bash
 kubectl run -it toolbox --image <image> --overrides='{ "spec": { "serviceAccount": "<sa_name>" }  }'
 ```
-
-Get shell into pod
-
-```bash
-kubectl exec -it pods/<pod_name> -- /bin/bash
-```
-
