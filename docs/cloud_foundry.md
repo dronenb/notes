@@ -47,6 +47,13 @@ Sometimes this doesn't work, in which case, see the second link below
 
 ## `uaac`
 
+### Login with client credentials
+
+```bash
+uaac target "${OM_TARGET}/uaa"
+uaac token client get "${OM_CLIENT_ID}" -s "${OM_CLIENT_SECRET}"
+```
+
 ### Opsman Client Creation
 
 Create an opsman client with readonly permissions with `uaac`
