@@ -54,6 +54,22 @@ Delete
 podman machine rm
 ```
 
+All at once (assumes running)
+
+```
+PODMAN_MACHINE_VCPUS=4
+PODMAN_MACHINE_MEMORY_MB=4096
+PODMAN_MACHINE_DISK_GB=20
+PODMAN_MACHINE_NAME="podman-machine-default"
+podman machine stop && \
+podman machine rm -f && \
+podman machine init \
+    --cpus "${PODMAN_MACHINE_VCPUS}" \
+    --disk-size "${PODMAN_MACHINE_DISK_GB}" \
+    --memory "${PODMAN_MACHINE_MEMORY_MB}" &&
+podman machine start
+```
+
 ## Podman Configuration
 
 On macOS, config is stored in `~/.config/containers/containers.conf` in TOML format. Example:
