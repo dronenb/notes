@@ -1,6 +1,6 @@
 # gpg
 
-# Setup `pinentry-touchid`
+## Setup `pinentry-touchid`
 
 ```bash
 brew tap jorgelbg/tap
