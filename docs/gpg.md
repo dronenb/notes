@@ -31,7 +31,7 @@ gpg --armor --export <key_id>
 gh auth refresh -s write:gpg_key
 
 # Add key
-gpg --armor --export 7FE136D3234EE3BFD2E27D74E9E9ED6A201531E1 | gh gpg-key add -
+gpg --armor --export <key_id> | gh gpg-key add -
 ```
 
 ## Refs
