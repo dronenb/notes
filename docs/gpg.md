@@ -17,14 +17,16 @@ pinentry-touchid -check
 gpg --full-generate-key
 ```
 
-## Export key
+## Export public key
 
 ```bash
 gpg --list-secret-keys --keyid-format=long
 gpg --armor --export <key_id>
 ```
 
-## Add to GitHub with `gh` CLI
+## GitHub
+
+### Add to GitHub with `gh` CLI
 
 ```bash
 # Auth with scope to add GPG key
@@ -32,6 +34,13 @@ gh auth refresh -s write:gpg_key
 
 # Add key
 gpg --armor --export <key_id> | gh gpg-key add -
+```
+
+### Configure Commit Signing
+
+```bash
+git config --global user.signingkey <key_id>
+git config --global commit.gpgsign true
 ```
 
 ## Refs
