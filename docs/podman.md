@@ -75,3 +75,12 @@ podman machine start
 On macOS, config is stored in `~/.config/containers/containers.conf` in TOML format. Example:
 
 - <https://github.com/containers/common/blob/main/docs/containers.conf.5.md>
+
+## Podman Apple Silicon "Waiting for VM" fix (Late 2023/Early 2024)
+
+```bash
+curl -sL https://gitlab.com/kraxel/qemu/-/raw/704f7cad5105246822686f65765ab92045f71a3b/pc-bios/edk2-aarch64-code.fd.bz2 | bzip2 -d - -c > /opt/homebrew/share/qemu/edk2-aarch64-code.fd  
+```
+
+ - <https://github.com/containers/podman/issues/20776>
+
