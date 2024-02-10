@@ -10,14 +10,26 @@ Using `pyenv` on Mac:
 # Get list of available Python versions
 pyenv install --list
 
+# One-liner to get most recent version
+PYTHON_VERSION=$( \
+  pyenv install --list | \
+    awk '{print $1}' | \
+    grep ^3 | \
+    grep -v "dev" | \
+    grep -v a | \
+    sort -t "." -k1,1n -k2,2n -k3,3n | \
+    tac | \
+    head -n 1 \
+)
+
 # Install a particular version
-pyenv install 3.12.1
+pyenv install "${PYTHON_VERSION}"
 
 # May get TK error, in which case may need to install python-tk for that version
-brew install python-tk@3.12
+brew install "python-tk@${PYTHON_VERSION}"
 
 # Switch to globally use that version
-python global 3.12.1
+python global "${PYTHON_VERSION}"
 ```
 
 ## macOS Cert Issue
