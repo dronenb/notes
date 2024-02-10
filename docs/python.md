@@ -7,6 +7,12 @@ Tips and tricks when working with Python that I'm inclined to forget.
 Using `pyenv` on Mac:
 
 ```bash
+# Get version currently used by pyenv
+pyenv version-name
+
+# Get list of versions available to pyenv, not including system
+pyenv versions --bare | sort -rt "." -k1,1n -k2,2n -k3,3n
+
 # Get list of available Python versions
 pyenv install --list
 
