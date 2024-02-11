@@ -24,6 +24,16 @@ Update `pre-commit` hooks and pin them to their release SHA using:
 pre-commit autoupdate --freeze
 ```
 
+One-liner to update for all my repos:
+
+```bash
+for dir in $(find . -name ".pre-commit-config.yaml" | xargs dirname); do
+  pushd "${dir}"
+  pre-commit autoupdate --freeze
+  popd
+done
+```
+
 ## Homebrew issue with `python-setuptools`
 
 Issue: https://github.com/pre-commit/pre-commit/issues/2122
