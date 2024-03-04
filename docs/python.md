@@ -7,6 +7,8 @@ Tips and tricks when working with Python that I'm inclined to forget.
 Using `pyenv` on Mac:
 
 ```bash
+# Install pyenv
+brew install pyenv pyenv-virtualenv
 # Get version currently used by pyenv
 pyenv version-name
 
