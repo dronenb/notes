@@ -37,7 +37,7 @@ pyenv install "${PYTHON_VERSION}"
 brew install "python-tk@${PYTHON_VERSION}"
 
 # Switch to globally use that version
-python global "${PYTHON_VERSION}"
+pyenv global "${PYTHON_VERSION}"
 ```
 
 ## macOS Cert Issue
