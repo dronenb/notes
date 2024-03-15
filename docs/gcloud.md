@@ -23,3 +23,13 @@ Example for US Central1:
 ```bash
 gcloud auth print-access-token | podman login -u oauth2accesstoken --password-stdin us-central1-docker.pkg.dev
 ```
+
+## Secrets Manager
+
+```bash
+# Read a secret
+gcloud secrets versions access latest --secret="<secret_name>" --project="<project_id>"
+
+# Add a secret version
+cat /tmp/<secret_file> | tr -d '\n' | gcloud secrets versions add --project="<project_id>" --data-file=- <secret_name>
+```
