@@ -2,6 +2,14 @@
 
 Homebrew is a package manager for macOS
 
+## Bumping a Formula or Cask Version
+
+This will automatically detect if a formula or cask is out of date and submit a PR if it is out of date.
+
+```bash
+brew bump --open-pr <package>
+```
+
 ## Forgetting an installed cask
 
 Sometimes there might be a case where you want to leave an application installed but not
