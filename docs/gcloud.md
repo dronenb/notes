@@ -33,3 +33,9 @@ gcloud secrets versions access latest --secret="<secret_name>" --project="<proje
 # Add a secret version
 cat /tmp/<secret_file> | tr -d '\n' | gcloud secrets versions add --project="<project_id>" --data-file=- <secret_name>
 ```
+
+## Disable Impersonation
+
+```bash
+gcloud config unset auth/impersonate_service_account
+```
