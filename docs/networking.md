@@ -25,3 +25,13 @@ Repeated `nc` connection test:
 ```bash
 while :; do nc -w 1 -vz  <HOST> <PORT>; done
 ```
+
+Send file with `nc`:
+
+```bash
+# Send
+nc -w 3 <IP> 8000 < out.file
+
+# Recieve (Mac syntax)
+nc -lk 8000 > uploaded_file.txt
+```
