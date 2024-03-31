@@ -5,5 +5,5 @@
 Had this get messed up when launching a Lutris game.
 
 ```bash
-xrand -o right
+xrandr -o right
 ```
