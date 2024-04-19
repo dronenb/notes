@@ -27,6 +27,13 @@ cd "${HOMEBREW_PREFIX}/Caskroom"
 rm -rf <cask_name>
 ```
 
+# Brew Style
+
+```bash
+# Check style of everything in a tap:
+brew style dronenb/tap
+```
+
 Ref:
 
 - https://stackoverflow.com/a/61164725/5050637
