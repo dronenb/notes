@@ -10,6 +10,13 @@ This will automatically detect if a formula or cask is out of date and submit a 
 brew bump --open-pr <package>
 ```
 
+## LiveCheck
+
+```bash
+# A tap
+brew lc --tap dronenb/tap
+```
+
 ## Forgetting an installed cask
 
 Sometimes there might be a case where you want to leave an application installed but not
