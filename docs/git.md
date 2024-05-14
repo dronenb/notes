@@ -23,3 +23,11 @@ git push -f
 ```
 git config --global pull.rebase true
 ```
+
+## Amend Commit
+
+With same commit message:
+
+```bash
+git commit --amend -m "$(git log -1 --pretty=%B)"
+```
