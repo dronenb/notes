@@ -30,3 +30,23 @@ kubectl run \
 ```bash
 kubectl run -it toolbox --image <image> --overrides='{ "spec": { "serviceAccount": "<sa_name>" }  }'
 ```
+
+## Get Resource Names/API Versions/Shortnames
+
+For all api resources:
+
+```bash
+kubectl api-resources
+```
+
+For namespace api resources:
+
+```bash
+    kubectl api-resources --namespaced=true
+```
+
+Can also do this for a particular resource:
+
+```bash
+kubectl explain <resource>
+```
