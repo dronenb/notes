@@ -42,7 +42,7 @@ kubectl api-resources
 For namespace api resources:
 
 ```bash
-    kubectl api-resources --namespaced=true
+kubectl api-resources --namespaced=true
 ```
 
 Can also do this for a particular resource:
