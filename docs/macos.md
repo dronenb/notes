@@ -7,6 +7,12 @@
 killall Finder 
 ```
 
+## Flush DNS Cache
+
+```bash
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```
+
 ## Cleaning Macbook Tips
 
 - How to take off arrow keys - <https://www.youtube.com/watch?v=xc__-jWXInU>
