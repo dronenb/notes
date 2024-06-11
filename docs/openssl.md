@@ -25,3 +25,9 @@ openssl s_client -showcerts -servername "${url}" -connect "${url}:443" 2>/dev/nu
 ```
 
 Also, can use above command to access sites through a proxy with the `-proxy <proxyhost>:<proxyport>` directive.
+
+## Convert P7B to PEM
+
+```bash
+openssl pkcs7 -inform DER -in <myfilename>.p7b -print_certs -quiet | sed '/^$/d' > output.cer
+```
