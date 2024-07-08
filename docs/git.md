@@ -34,6 +34,17 @@ git commit --amend -m "$(git log -1 --pretty=%B)"
 
 ## Enabling Commit Signing w/ SSH
 
+Prep work on Windows:
+
+```
+choco upgrade git --params “‘/NoOpenSSH’”
+Get-Service ssh-agent | Set-Service -StartupType Automatic -PassThru | Start-Service
+New-Item "$env:USERPROFILE\.ssh" -ItemType Directory -ea 0
+ssh-keygen -t ecdsa -b 256 -C "$env:USERNAME" -f "$env:USERPROFILE\.ssh\id_ecdsa"
+if (-not (Test-Path $PROFILE)) {$null = New-Item -Force $PROFILE}
+"ssh-add -l | Select-String `$(ssh-keygen -lf `$env:USERPROFILE\.ssh\id_ecdsa) || ssh-add  `$env:USERPROFILE\.ssh\id_ecdsa" >> $PROFILE
+```
+
 ```bash
 ssh-keygen -t ecdsa -b 256 -C "${USER}" -f ~/.ssh/id_ecdsa
 git config --global gpg.format ssh
