@@ -1,11 +1,11 @@
 ---
 repos:
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.1
+    rev: 77c3c6a34b2577d71083442326c60b8fd58926ec  # frozen: v8.18.4
     hooks:
       - id: gitleaks
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.38.0
+    rev: f295829140d25717bc79368d3f966fc1f67a824f  # frozen: v0.41.0
     hooks:
       - id: markdownlint
 
