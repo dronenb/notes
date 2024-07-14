@@ -45,6 +45,8 @@ if (-not (Test-Path $PROFILE)) {$null = New-Item -Force $PROFILE}
 "ssh-add -l | Select-String `$(ssh-keygen -lf `$env:USERPROFILE\.ssh\id_ecdsa) || ssh-add  `$env:USERPROFILE\.ssh\id_ecdsa" >> $PROFILE
 ```
 
+Actual process
+
 ```bash
 ssh-keygen -t ecdsa -b 256 -C "${USER}" -f ~/.ssh/id_ecdsa
 git config --global gpg.format ssh
