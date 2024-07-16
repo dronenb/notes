@@ -50,3 +50,9 @@ Can also do this for a particular resource:
 ```bash
 kubectl explain <resource>
 ```
+
+## Job from CronJob
+
+```bash
+kubectl create job --from=cronjob/<name of cronjob> <name of job>
+```
