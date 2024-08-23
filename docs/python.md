@@ -24,6 +24,7 @@ PYTHON_VERSION=$( \
     awk '{print $1}' | \
     grep ^3 | \
     grep -v "dev" | \
+    grep -v "rc" | \
     grep -v a | \
     sort -t "." -k1,1n -k2,2n -k3,3n | \
     tac | \
