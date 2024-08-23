@@ -35,7 +35,7 @@ PYTHON_VERSION=$( \
 pyenv install "${PYTHON_VERSION}"
 
 # May get TK error, in which case may need to install python-tk for that version
-brew install "python-tk@${PYTHON_VERSION}"
+brew install "python-tk@$(echo ${PYTHON_VERSION} | sed 's/\.[0-9]*$//')"
 
 # Switch to globally use that version
 pyenv global "${PYTHON_VERSION}"
