@@ -39,6 +39,9 @@ brew install "python-tk@$(echo ${PYTHON_VERSION} | sed 's/\.[0-9]*$//')"
 
 # Switch to globally use that version
 pyenv global "${PYTHON_VERSION}"
+
+# Uninstall a version
+pyenv uninstall <version>
 ```
 
 ## macOS Cert Issue
