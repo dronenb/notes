@@ -40,9 +40,12 @@ cat /tmp/<secret_file> | tr -d '\n' | gcloud secrets versions add --project="<pr
 gcloud config unset auth/impersonate_service_account
 ```
 
-## Disable Survey Prompt
+## Disable Junk
 
 ```bash
-gcloud config set survey/disable_prompts True
+  gcloud config set core/disable_usage_reporting true
+  gcloud config set component_manager/disable_update_check true
+  gcloud config set metrics/environment github_docker_image
+  gcloud config set survey/disable_prompts true
 ```
 
