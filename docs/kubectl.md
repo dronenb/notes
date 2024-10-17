@@ -56,3 +56,9 @@ kubectl explain <resource>
 ```bash
 kubectl create job --from=cronjob/<name of cronjob> <name of job>
 ```
+
+## Get Resource Name
+
+```bash
+kubectl get pods --no-headers -o custom-columns=":metadata.name"
+```
