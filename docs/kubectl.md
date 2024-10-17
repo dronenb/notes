@@ -62,3 +62,12 @@ kubectl create job --from=cronjob/<name of cronjob> <name of job>
 ```bash
 kubectl get pods --no-headers -o custom-columns=":metadata.name"
 ```
+
+# Wait For
+
+Some examples
+
+```bash
+kubectl wait -n <namespace> --for jsonpath='{.status.phase}'=Succeeded pod/<pod>
+kubectl wait -n <namespace> --for=condition=<condition> "pod/pod" --timeout=600s
+```
