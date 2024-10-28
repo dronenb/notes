@@ -13,6 +13,22 @@ killall Finder
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 ```
 
+## TFTP Server
+
+Enable with:
+
+```bash
+sudo launchctl load -F /System/Library/LaunchDaemons/tftp.plist
+```
+
+Disable with:
+
+```bash
+sudo launchctl unload /System/Library/LaunchDaemons/tftp.plist
+```
+
+TFTP directory is in `/private/tftpboot`, will need to pre-create files w/ 777 permissions to copy files to TFTP server, will need to make sure files in that folder are 777 to copy from.
+
 ## Cleaning Macbook Tips
 
 - How to take off arrow keys - <https://www.youtube.com/watch?v=xc__-jWXInU>
