@@ -7,7 +7,7 @@ On the client:
 ```bash
 wg_net="10.9.6.0/255.255.255.0"
 export DEBIAN_FRONTEND=noninteractive
-apt-get install -y --no-iptables-persistent
+apt-get install -y iptables-persistent
 
 sysctl -w net.ipv6.conf.all.forwarding=1
 sysctl -w net.ipv4.ip_forward=1
