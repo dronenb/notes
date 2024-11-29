@@ -26,6 +26,7 @@ PYTHON_VERSION=$( \
     grep -v "dev" | \
     grep -v "rc" | \
     grep -v a | \
+    grep -v t | \
     sort -t "." -k1,1n -k2,2n -k3,3n | \
     tac | \
     head -n 1 \
