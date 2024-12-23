@@ -50,3 +50,9 @@
   ```
 
 1. There should be a line that says `User : ${USER}`, with a line below it saying `Hash NTLM: `. Grab this hash and use rainbow tables from [Crack Station](https://crackstation.net/) or hashcat, john the ripper, etc. to crack the hash.
+
+Ref: https://security.stackexchange.com/questions/157922/how-are-windows-10-hashes-stored-if-the-account-is-setup-using-a-microsoft-accou/158174#158174
+
+## Updating Windows 11 on Incompatible Hardware
+
+Ref: https://www.youtube.com/watch?v=mC657pIDyOc&list=LL&index=1
