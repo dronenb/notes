@@ -9,9 +9,15 @@ wg_net="10.9.6.0/255.255.255.0"
 export DEBIAN_FRONTEND=noninteractive
 apt-get install -y iptables-persistent
 
+# If not using systemd-sysctl
 sysctl -w net.ipv6.conf.all.forwarding=1
 sysctl -w net.ipv4.ip_forward=1
 sudo sysctl -p
+
+# If using systemd-sysctl
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.d/99-sysctl.conf
+echo "net.ipv6.conf.all.forwarding=1" >> /etc/sysctl.d/99-sysctl.conf
+systemctl restart systemd-sysctl
 
 iptables -A INPUT -i wg0 -j ACCEPT
 iptables -A FORWARD -i wg0 -j ACCEPT
