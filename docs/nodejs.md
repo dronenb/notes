@@ -9,3 +9,9 @@ Example with `playwright-core` package:
 ```bash
 npm view playwright-core
 ```
+
+## Disable funding message
+
+```bash
+npm config set fund false
+```
