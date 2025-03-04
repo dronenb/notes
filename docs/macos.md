@@ -13,6 +13,12 @@ killall Finder
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 ```
 
+## Unquarantine a file
+
+```bash
+xattr -d com.apple.quarantine <file>
+```
+
 ## TFTP Server
 
 Enable with:
