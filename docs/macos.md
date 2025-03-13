@@ -19,6 +19,33 @@ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 xattr -d com.apple.quarantine <file>
 ```
 
+## Rotate MAC address
+
+```bash
+#!/usr/bin/env bash
+set -o errexit  # Exit on any failure. Same as set -e
+set -o nounset  # Exit on undeclared variables. Same as set -u
+set -o pipefail # Return value of all commands in a pipe
+# set -o xtrace  # command tracing, same as set -x
+set -o noglob # Disable globs. Messes up the * in curl's noproxy option
+
+cat <<EOF > "${TMPDIR}/disconnectwifi.swift"
+import Foundation
+import CoreWLAN
+
+if let wifiInterface = CWWiFiClient.shared().interface() {
+  wifiInterface.disassociate()
+  print("ok")
+} else {
+  print("error")
+}
+EOF
+swift "${TMPDIR}/disconnectwifi.swift"
+sleep 3
+random_mac=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+sudo ifconfig en0 ether "${random_mac}"
+```
+
 ## TFTP Server
 
 Enable with:
