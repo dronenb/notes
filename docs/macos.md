@@ -46,6 +46,8 @@ random_mac=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
 sudo ifconfig en0 ether "${random_mac}"
 ```
 
+- <https://github.com/dronenb/notes/blob/main/docs/macos.md#rotate-mac-address>
+
 ## TFTP Server
 
 Enable with:
