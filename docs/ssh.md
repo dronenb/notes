@@ -60,6 +60,11 @@ For using a Yubikey or similar with SSH on macOS Sonoma or higher.
 
 ```bash
 brew install michaelroosz/ssh/libsk-libfido2-install
+brew install --cask michaelroosz/ssh/libsk-libfido2-install
+
+export SSH_SK_PROVIDER=/usr/local/lib/libsk-libfido2.dylib
+ssh-keygen -t ed25519-sk -O resident -O verify-required -C "Yubikey SSH"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519_sk
 ```
 
 - <https://github.com/MichaelRoosz/homebrew-ssh/blob/main/Casks/libsk-libfido2-install.rb>
