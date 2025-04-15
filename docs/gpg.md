@@ -6,7 +6,7 @@
 brew tap jorgelbg/tap
 brew install pinentry-mac jorgelbg/tap/pinentry-touchid
 mkdir -p "$HOME/.gnupg"
-chmod 600 "$HOME/.gnupg"
+chmod 700 "$HOME/.gnupg"
 /opt/homebrew/opt/pinentry-touchid/bin/pinentry-touchid -fix
 echo "pinentry-program ${HOMEBREW_PREFIX}/bin/pinentry-touchid" > ~/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
