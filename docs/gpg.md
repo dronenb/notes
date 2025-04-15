@@ -7,7 +7,10 @@ brew tap jorgelbg/tap
 brew install pinentry-mac jorgelbg/tap/pinentry-touchid
 mkdir -p "$HOME/.gnupg"
 chmod 600 "$HOME/.gnupg"
+/opt/homebrew/opt/pinentry-touchid/bin/pinentry-touchid -fix
 echo "pinentry-program ${HOMEBREW_PREFIX}/bin/pinentry-touchid" > ~/.gnupg/gpg-agent.conf
+gpg-connect-agent reloadagent /bye
+defaults write org.gpgtools.common DisableKeychain -bool yes
 pinentry-touchid -check
 ```
 
