@@ -63,6 +63,12 @@ kubectl create job --from=cronjob/<name of cronjob> <name of job>
 kubectl get pods --no-headers -o custom-columns=":metadata.name"
 ```
 
+## Restart a deployment
+
+```bash
+kubectl rollout restart deployment/<deployment>
+```
+
 # Wait For
 
 Some examples
