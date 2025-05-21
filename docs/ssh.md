@@ -43,10 +43,9 @@ Host myhost
 
 For environment variables, the server must have the appropriate `AcceptEnv GH_TOKEN`, etc. on the other end in the `/etc/ssh/sshd_config` file.
 
-
 ## SSH Port Forward
 
-### Forward Remote Port to Local:
+### Forward Remote Port to Local
 
 ```bash
 ssh -L <LOCAL IP>:<LOCAL PORT>:<REMOTE IP>:<REMOTE PORT> <SSH GATEWAY IP/HOSTNAME>
@@ -75,5 +74,5 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519_sk
 Disable useless output when logging in via SSH:
 
 ```bash
-touch $HOME/.hughlogin
+touch "${HOME}/.hughlogin"
 ```

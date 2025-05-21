@@ -2,8 +2,6 @@
 
 Notes related to configuring Spotify client.
 
-## 
-
 ## Spotify w/ Proxy
 
 Spotiy does not resolve DNS properly when using an HTTP proxy. Can use the following command to add DNS entry for Spotify to `/etc/hosts` for Spotify and configure the Spotify client settings.

@@ -18,9 +18,9 @@ git rebase --continue
 git push -f
 ```
 
-## Enable rebasing by default:
+## Enable rebasing by default
 
-```
+```bash
 git config --global pull.rebase true
 ```
 
@@ -36,7 +36,7 @@ git commit --amend -m "$(git log -1 --pretty=%B)"
 
 Prep work on Windows:
 
-```
+```pwsh
 choco upgrade git --params “‘/NoOpenSSH’”
 Get-Service ssh-agent | Set-Service -StartupType Automatic -PassThru | Start-Service
 New-Item "$env:USERPROFILE\.ssh" -ItemType Directory -ea 0
@@ -55,4 +55,3 @@ git config --global user.signingkey ~/.ssh/id_ecdsa.pub
 gh auth login --git-protocol https --scopes "admin:ssh_signing_key"
 gh ssh-key add --title "${USER}" --type signing ~/.ssh/id_ecdsa.pub
 ```
-

@@ -12,4 +12,5 @@ validate with:
 ```bash
 aws sts get-caller-identity
 ```
+
 ref: <https://stackoverflow.com/a/52311817>

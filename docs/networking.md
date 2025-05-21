@@ -14,7 +14,7 @@ curl http://ipecho.net/plain
 tcpdump -vvv -i any not port 22 -w /tmp/rolling_dump0.pcap -W 4 -C 600 -n
 ```
 
-## Test outbound connection with `nc`:
+## Test outbound connection with `nc`
 
 ```bash
 nc -w 1 -vz  <HOST> <PORT>

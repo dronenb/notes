@@ -4,19 +4,19 @@ Notes for things related to Cloud Foundry. In particular, Tanzu Application Serv
 
 ## CredHub
 
-### Hijack CredHub Credentials from running app (assumes Java buildpack):
+### Hijack CredHub Credentials from running app (assumes Java buildpack)
 
 ```bash
 cat /proc/$(ps -ef | grep -v grep | grep java | awk '{print $2}'|head -n 1)/environ|tr '\\0' '\\n'|grep VCAP_SERVICES|cut -d '=' -f 2-|jq '.credhub[] | select (.instance_name=="credhubSi")|.credentials' -c -r | jq -r .
 ```
 
-### Get credhub creds when using `cf ssh`:
+### Get credhub creds when using `cf ssh`
 
 ```bash
 curl -H 'Content-Type: application/json' --cert /etc/cf-instance-credentials/instance.crt --key /etc/cf-instance-credentials/instance.key -d "$VCAP_SERVICES" 'https://credhub.service.cf.internal:8844/api/v1/interpolate'
 ```
 
-### Use foundation CredHub CLI:
+### Use foundation CredHub CLI
 
 ```bash
 credhub api -s $BOSH_ENVIRONMENT:8844 --ca-cert $BOSH_CA_CERT
@@ -34,7 +34,7 @@ maestro topology --name
 
 ## Diego
 
-### Get running apps in Diego cell:
+### Get running apps in Diego cell
 
 ```bash
 cfdot cell-state <cell-id> | jq -r '. | "\ndiego_cell:", .cell_id, "\n", "App-Guids:", .LRPs[].process_guid[0:36]'

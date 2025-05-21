@@ -8,7 +8,7 @@ Tips and tricks for working with [Concourse CI](https://concourse-ci.org/) from 
 fly --target=<team> hijack --job=<pipeline>/<job>
 ```
 
-# Trigger Schedule Pipeline
+## Trigger Schedule Pipeline
 
 This must be done if you want to run a pipeline job prior to first scheduled run.
 

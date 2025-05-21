@@ -21,6 +21,7 @@ sudo security add-trusted-cert -d -p ssl -p basic -k /Library/Keychains/System.k
 ref: <https://docs.mitmproxy.org/stable/concepts/certificates/#installing-the-mitmproxy-ca-certificate-manually>
 
 Use with CLI applications
+
 ```bash
 export HTTPS_PROXY=http://localhost:8080
 export HTTP_PROXY=http://localhost:8080

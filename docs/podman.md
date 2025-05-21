@@ -1,12 +1,12 @@
 # Podman
 
-## Open a shell in a new image:
+## Open a shell in a new image
 
 ```bash
 podman run -it <image> /bin/bash
 ```
 
-## Open a shell in a running container:
+## Open a shell in a running container
 
 ```bash
 podman exec -it <image_id> /bin/bash
@@ -19,7 +19,7 @@ podman build --platform linux/amd64 ...
 podman run --platform linux/amd64 ...
 ```
 
-## Delete untagged images:
+## Delete untagged images
 
 ```bash
 for image in $(podman images | grep none | awk '{print $3}'); do podman image rm -f "${image}"; done
@@ -56,7 +56,7 @@ podman machine rm
 
 All at once (assumes running)
 
-```
+```bash
 PODMAN_MACHINE_VCPUS=4
 PODMAN_MACHINE_MEMORY_MB=4096
 PODMAN_MACHINE_DISK_GB=20
@@ -82,5 +82,4 @@ On macOS, config is stored in `~/.config/containers/containers.conf` in TOML for
 curl -sL https://gitlab.com/kraxel/qemu/-/raw/704f7cad5105246822686f65765ab92045f71a3b/pc-bios/edk2-aarch64-code.fd.bz2 | bzip2 -d - -c > /opt/homebrew/share/qemu/edk2-aarch64-code.fd  
 ```
 
- - <https://github.com/containers/podman/issues/20776>
-
+- <https://github.com/containers/podman/issues/20776>

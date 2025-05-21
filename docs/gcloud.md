@@ -48,4 +48,3 @@ gcloud config unset auth/impersonate_service_account
   gcloud config set metrics/environment github_docker_image
   gcloud config set survey/disable_prompts true
 ```
-

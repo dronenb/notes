@@ -68,7 +68,7 @@ TFTP directory is in `/private/tftpboot`, will need to pre-create files w/ 777 p
 
 All GUI apps can read environment variables set by launchctl
 
-```
+```bash
 launchctl setenv ALLOW_BROWSER_INTEGRATION_OVERRIDE true
 ```
 

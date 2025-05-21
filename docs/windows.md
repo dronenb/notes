@@ -6,32 +6,32 @@
 1. Connect to WiFi
 1. Enable SSH:
 
-   ```bash
-   sudo systemctl enable ssh
-   sudo systemctl start ssh
-   ```
+  ```bash
+  sudo systemctl enable ssh
+  sudo systemctl start ssh
+  ```
 
 1. Set password for kali user:
 
-   ```bash
-   sudo passwd kali
-   ```
+  ```bash
+  sudo passwd kali
+  ```
 
 1. SSH to the machine from local workstation
 1. Mount the Windows filesystem
 
-   ```bash
-   sudo mkdir -p /mnt/windows
-   sudo mount $(sudo fdisk -l | grep "Microsoft basic data" | awk '{print $1}') /mnt/windows
-   ```
+  ```bash
+  sudo mkdir -p /mnt/windows
+  sudo mount $(sudo fdisk -l | grep "Microsoft basic data" | awk '{print $1}') /mnt/windows
+  ```
 
 1. Extract SYSTEM and SAM files
 
-   ```bash
-   cp /mnt/windows/Windows/System32/config/SAM /tmp/SAM
-   cp /mnt/windows/Windows/System32/config/SYSTEM /tmp/SYSTEM
-   cd /tmp
-   ```
+  ```bash
+  cp /mnt/windows/Windows/System32/config/SAM /tmp/SAM
+  cp /mnt/windows/Windows/System32/config/SYSTEM /tmp/SYSTEM
+  cd /tmp
+  ```
 
 1. Install `wine`
 
@@ -49,10 +49,10 @@
   lsadump::sam /system:/tmp/SYSTEM /sam:/tmp/SAM
   ```
 
-1. There should be a line that says `User : ${USER}`, with a line below it saying `Hash NTLM: `. Grab this hash and use rainbow tables from [Crack Station](https://crackstation.net/) or hashcat, john the ripper, etc. to crack the hash.
+1. There should be a line that says `User : ${USER}`, with a line below it saying `Hash NTLM:`. Grab this hash and use rainbow tables from [Crack Station](https://crackstation.net/) or hashcat, john the ripper, etc. to crack the hash.
 
-Ref: https://security.stackexchange.com/questions/157922/how-are-windows-10-hashes-stored-if-the-account-is-setup-using-a-microsoft-accou/158174#158174
+Ref: <https://security.stackexchange.com/questions/157922/how-are-windows-10-hashes-stored-if-the-account-is-setup-using-a-microsoft-accou/158174#158174>
 
 ## Updating Windows 11 on Incompatible Hardware
 
-Ref: https://www.youtube.com/watch?v=mC657pIDyOc&list=LL&index=1
+Ref: <https://www.youtube.com/watch?v=mC657pIDyOc&list=LL&index=1>
