@@ -4,7 +4,7 @@
 
 ```bash
 brew install docker lima
-limactl start --vm-type qemu --cpus 4 --memory 16 --name docker template://docker --tty=false
+limactl start --vm-type vz --cpus 4 --memory 16 --name docker template://docker --tty=false
 docker context create lima-docker --docker "host=unix:///Users/dronenb/.lima/docker/sock/docker.sock"
 docker context use lima-docker
 # Add to .zshrc or the like
