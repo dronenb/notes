@@ -77,3 +77,9 @@ Some examples
 kubectl wait -n <namespace> --for jsonpath='{.status.phase}'=Succeeded pod/<pod>
 kubectl wait -n <namespace> --for=condition=<condition> "pod/pod" --timeout=600s
 ```
+
+## Get all LoadBalancer's
+
+```bash
+kubectl get service -A -oyaml | yq '.items [] | split_doc | select(.spec.type == "LoadBalancer")'
+```
