@@ -15,3 +15,11 @@ npm view playwright-core
 ```bash
 npm config set fund false
 ```
+
+## `nvm`
+
+Install latest LTS:
+
+```bash
+nvm install --lts
+```
