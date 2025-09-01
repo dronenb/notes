@@ -76,6 +76,15 @@ On macOS, config is stored in `~/.config/containers/containers.conf` in TOML for
 
 - <https://github.com/containers/common/blob/main/docs/containers.conf.5.md>
 
+## Docker Compatibility
+
+This will create a socket at `/var/run/docker.sock`, which is the default `DOCKER_HOST`, meaning you can use the `docker` CLI with Podman.
+
+```bash
+sudo podman-mac-helper install
+brew install docker
+```
+
 ## Podman Apple Silicon "Waiting for VM" fix (Late 2023/Early 2024)
 
 ```bash
