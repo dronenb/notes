@@ -1,0 +1,75 @@
+# `aqua`
+
+## Usage
+
+Setup:
+
+```bash
+aqua init
+```
+
+This will create a base `aqua.yaml` file which contains the packages that can be installed declaratively.
+
+Packages will be installed to `~/.local/share/aquaproj-aqua`
+
+View avilable packages in your registries with:
+
+```bash
+aqua g
+```
+
+Add a package to `aqua.yaml` with `aqua g -i <pkg>`. Example:
+
+```bash
+aqua g -i minc-org/minc
+```
+
+Example:
+
+## Contributing
+
+Fork and clone `https://github.com/aquaproj/aqua-registry`, then run:
+
+```bash
+cmdx s <org>/<repo>
+```
+
+Example:
+
+```bash
+cmdx s minc-org/minc
+```
+
+Ensure that `docker` is running, as it is used by `cmdx`.
+
+Then run:
+
+```bash
+cmdx t
+```
+
+Validate you can install by adding the registry for your package to your `aqua.yaml`:
+
+```yaml
+registries:
+  - name: minc
+    type: local
+    path: ~/workspace/aqua-registry/pkgs/minc-org/minc/registry.yaml
+```
+
+and add the package:
+
+```yaml
+  - name: minc-org/minc
+    registry: minc
+    version: v0.1.0
+```
+
+then run:
+
+```bash
+export AQUA_DISABLE_POLICY=true
+aqua i
+```
+
+and validate the package works
