@@ -4,8 +4,8 @@
 
 ```bash
 export VSCODE_GALLERY_SERVICE_URL="https://marketplace.visualstudio.com/_apis/public/gallery"
-codium --install-extension GitHub.copilot
-codium --install-extension GitHub.copilot-chat
+codium --install-extension GitHub.copilot --force
+codium --install-extension GitHub.copilot-chat --force
 yq -i '.extensionEnabledApiProposals."GitHub.copilot" = ([.extensionEnabledApiProposals."GitHub.copilot", ["inlineCompletions","inlineCompletionsNew","inlineCompletionsAdditions","textDocumentNotebook","interactive","terminalDataWriteEvent"]] | flatten | unique)' /Applications/VSCodium.app/Contents/Resources/app/product.json
 ```
 
