@@ -22,3 +22,16 @@ curl -sL "https://github.com/docker/buildx/releases/download/${DOCKER_BUILDX_VER
 ```
 
 ref: <https://github.com/docker/buildx?tab=readme-ov-file#manual-download>
+
+## Install `docker compose`
+
+for macOS:
+
+```bash
+mkdir -p "${HOME}/.docker/cli-plugins"
+DOCKER_COMPOSE_VERSION=$(curl -sL https://api.github.com/repos/docker/compose/releases | jq -r ".[0].name")
+curl -sL "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-darwin-aarch64" -o "${HOME}/.docker/cli-plugins/docker-compose"
+chmod +x "${HOME}/.docker/cli-plugins/docker-compose"
+```
+
+ref: <https://github.com/docker/compose#linux>
