@@ -32,7 +32,7 @@ Initialize
 ```bash
 PODMAN_MACHINE_VCPUS=4
 PODMAN_MACHINE_MEMORY_MB=16384
-PODMAN_MACHINE_DISK_GB=100
+PODMAN_MACHINE_DISK_GB=200
 PODMAN_MACHINE_NAME="podman-machine-default"
 
 podman machine init \
@@ -59,7 +59,7 @@ All at once (assumes running)
 ```bash
 PODMAN_MACHINE_VCPUS=4
 PODMAN_MACHINE_MEMORY_MB=4096
-PODMAN_MACHINE_DISK_GB=100
+PODMAN_MACHINE_DISK_GB=200
 PODMAN_MACHINE_NAME="podman-machine-default"
 podman machine stop && \
 podman machine rm -f && \
