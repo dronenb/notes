@@ -47,7 +47,7 @@ EXISTING_TAP_DIR="$(brew --repository "${USER}/homebrew-tap")"
 pushd "${EXISTING_TAP_DIR}"
 git checkout main
 git pull
-git checkokut -b ci-updates
+git checkout -b ci-updates
 cp -R "${TEMPLATE_TAP_DIR}/.github/workflows/"* "${EXISTING_TAP_DIR}/.github/workflows/"
 git add "${EXISTING_TAP_DIR}/.github/workflows/"
 git commit -m "chore(ci): upgrade workflows"
